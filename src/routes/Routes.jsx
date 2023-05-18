@@ -8,6 +8,7 @@ import MyToys from '../pages/MyToys';
 import AddAToy from '../pages/AddAToy';
 import Blog from '../pages/Blog';
 import Login from '../pages/Login';
+import Regestation from '../pages/Regestation';
 
 // All Toys
 // My Toys
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
         {
           path: "/login",
           element: <Login></Login>
+        },
+        {
+          path: "/register",
+          element: <Regestation></Regestation>
         }
       ]
     },
