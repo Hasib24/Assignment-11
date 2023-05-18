@@ -11,7 +11,8 @@ const googleProvider = new GoogleAuthProvider();
 export const AuthContex = createContext(null)
 
 const AuthContextProvider = ({ children }) => {
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState(null);
+    const [loader, setLoader] = useState(true)
 
 
     const googleSignIn = () =>{
@@ -21,8 +22,9 @@ const AuthContextProvider = ({ children }) => {
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, currentUser=>{
             setUser(currentUser)
+            setLoader(null)
         })
-        
+
         //stop observing after unmount
         return unsubscribe()
     },[])
@@ -30,6 +32,8 @@ const AuthContextProvider = ({ children }) => {
     const userInfo ={
         user,
         setUser,
+        loader,
+        setLoader,
         googleSignIn
     }
 
