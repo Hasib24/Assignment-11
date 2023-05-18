@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import GoogleBtn from '../components/GoogleBtn';
+import { FcGoogle } from 'react-icons/fc';
+import { Link } from 'react-router-dom';
 
 const Regestation = () => {
     let [show, setShow] = useState(false);
@@ -23,7 +26,14 @@ const Regestation = () => {
                 <p onClick={()=>{setShow(!show)}}>{show ? <span>show password</span> : <span>hide password</span> }</p>
                 <input className='m-2 p-1 border rounded-md outline-none' type="url" name="url" id="url" placeholder='url' />
                 <input className='m-2 p-1 border rounded-md cursor-pointer block' type="submit" name="submit" id="submit" value="Register" />
+
+                <p>Already have an accounte ? <Link to='/login'>Login</Link></p>
+                <GoogleBtn>login with <FcGoogle className='inline'></FcGoogle></GoogleBtn>
+
             </form>
+
+           
+            
             
         </div>
     );
