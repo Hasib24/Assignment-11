@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import HomeLayout from '../layouts/HomeLayout';
 import Home from '../pages/Home';
@@ -10,6 +10,7 @@ import Blog from '../pages/Blog';
 import Login from '../pages/Login';
 import Regestation from '../pages/Regestation';
 import PrivateRoutes from './PrivateRoutes';
+
 
 
 const router = createBrowserRouter([
@@ -28,8 +29,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/mytoys",
-          element: <MyToys></MyToys>,
-          loader: ()=>fetch('http://localhost:5000/alltoys')
+          element: <PrivateRoutes><MyToys></MyToys></PrivateRoutes>
         },
         {
           path: "/addatoy",
