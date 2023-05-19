@@ -2,28 +2,61 @@ import React, { useContext } from 'react';
 import { HiPencilAlt } from 'react-icons/hi';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { AuthContex } from '../../providers/AuthContextProvider';
+import swal from 'sweetalert';
 
 
 const SingleToy = ({toy}) => {
     const { toys, setToys } = useContext(AuthContex)
     const { _id, name, price, category} = toy
     
-    // deletedCount 
+    // swal({
+    //     title: "Are you sure?",
+    //     text: "Once deleted, you will not be able to recover this imaginary file!",
+    //     icon: "warning",
+    //     buttons: true,
+    //     dangerMode: true,
+    //   })
+    //   .then((willDelete) => {
+    //     if (willDelete) {
+    //       swal("Poof! Your imaginary file has been deleted!", {
+    //         icon: "success",
+    //       });
+    //     } else {
+    //       swal("Your imaginary file is safe!");
+    //     }
+    //   });
 
     const handleUpdate = (_id) =>{
         console.log(_id);
     }
     const handleDelete=(_id) =>{
-        fetch(`http://localhost:5000/mytoys/${_id}`,{
-            method: 'DELETE'
-        })
-        .then(res => res.json())
-        .then(data =>{
-            if(data.deletedCount){
-                const remainingToys = toys.filter(toy=> toy._id!==_id)
-                setToys(remainingToys);
-            }
-        })
+        //starting with sweet alart
+        swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this toy!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              }).then((willDelete) => {
+                if (willDelete) {
+                    fetch(`http://localhost:5000/mytoys/${_id}`,{ method: 'DELETE' })
+                    .then(res => res.json())
+                    .then(data =>{
+
+                        if(data.deletedCount){
+                            const remainingToys = toys.filter(toy=> toy._id!==_id)
+                            setToys(remainingToys);
+
+                            swal("Poof! Your toy has been deleted!", { icon: "success",});
+                        }
+                    })
+                }else{
+                    swal("Your imaginary toy is safe!");
+                }
+      });
+
+
+        
     }
 
     return (
