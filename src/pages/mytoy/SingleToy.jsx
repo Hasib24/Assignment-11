@@ -11,7 +11,9 @@ const SingleToy = ({toy}) => {
         console.log(_id);
     }
     const handleDelete=(_id) =>{
-        console.log(_id);
+        fetch(`http://localhost:5000/mytoys/${_id}`,{
+            method: 'DELETE'
+        })
     }
 
     return (
