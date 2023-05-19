@@ -3,14 +3,18 @@ import { HiPencilAlt } from 'react-icons/hi';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { AuthContex } from '../../providers/AuthContextProvider';
 import swal from 'sweetalert';
+import { useNavigate } from 'react-router-dom';
 
 
 const SingleToy = ({toy}) => {
+    const navigate = useNavigate();
     const { toys, setToys } = useContext(AuthContex)
     const { _id, name, price, category} = toy
 
     const handleUpdate = (_id) =>{
         console.log(_id);
+        navigate(`/update/${_id}`);
+        
     }
     const handleDelete=(_id) =>{
         //starting with sweet alart

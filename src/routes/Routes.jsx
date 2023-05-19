@@ -10,6 +10,7 @@ import Blog from '../pages/Blog';
 import Login from '../pages/Login';
 import Regestation from '../pages/Regestation';
 import PrivateRoutes from './PrivateRoutes';
+import UpdateMyToy from '../pages/mytoy/UpdateMyToy';
 
 
 
@@ -30,6 +31,12 @@ const router = createBrowserRouter([
         {
           path: "/mytoys",
           element: <PrivateRoutes><MyToys></MyToys></PrivateRoutes>
+        },
+        {
+          path: "/update/:id",
+          element: <PrivateRoutes><UpdateMyToy></UpdateMyToy></PrivateRoutes>,
+          loader: ({params})=>fetch(`http://localhost:5000/update/${params.id}`)
+          
         },
         {
           path: "/addatoy",
