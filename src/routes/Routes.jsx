@@ -4,7 +4,7 @@ import HomeLayout from '../layouts/HomeLayout';
 import Home from '../pages/Home';
 import Error from '../pages/Error';
 import AllToys from '../pages/alltoys/AllToys';
-import MyToys from '../pages/MyToys';
+import MyToys from '../pages/mytoy/MyToys';
 import AddAToy from '../pages/AddAToy';
 import Blog from '../pages/Blog';
 import Login from '../pages/Login';
