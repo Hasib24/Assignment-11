@@ -12,7 +12,8 @@ export const AuthContex = createContext(null)
 
 const AuthContextProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [loader, setLoader] = useState(true)
+    const [loader, setLoader] = useState(true);
+    const [toys, setToys] = useState([])
 
 
     const googleSignIn = () =>{
@@ -34,6 +35,8 @@ const AuthContextProvider = ({ children }) => {
         setUser,
         loader,
         setLoader,
+        toys,
+        setToys,
         googleSignIn
     }
 

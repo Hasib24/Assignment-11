@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { HiPencilAlt } from 'react-icons/hi';
 import { AiOutlineDelete } from 'react-icons/ai';
+import { AuthContex } from '../../providers/AuthContextProvider';
 
 
 const SingleToy = ({toy}) => {
+    const { toys, setToys } = useContext(AuthContex)
     const { _id, name, price, category} = toy
     
+    // deletedCount 
 
     const handleUpdate = (_id) =>{
         console.log(_id);
@@ -13,6 +16,13 @@ const SingleToy = ({toy}) => {
     const handleDelete=(_id) =>{
         fetch(`http://localhost:5000/mytoys/${_id}`,{
             method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data =>{
+            if(data.deletedCount){
+                const remainingToys = toys.filter(toy=> toy._id!==_id)
+                setToys(remainingToys);
+            }
         })
     }
 

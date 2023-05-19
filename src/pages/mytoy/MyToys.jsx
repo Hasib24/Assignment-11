@@ -5,8 +5,8 @@ import { AuthContex } from '../../providers/AuthContextProvider';
 
 
 const MyToys = () => {
-    const [toys, setToys] = useState([])
-    const {user, loader} = useContext(AuthContex)
+    
+    const {user, toys, setToys, loader} = useContext(AuthContex)
 
     if(loader){
         return <div>Loading...</div>
