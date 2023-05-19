@@ -11,11 +11,6 @@ import Login from '../pages/Login';
 import Regestation from '../pages/Regestation';
 import PrivateRoutes from './PrivateRoutes';
 
-// All Toys
-// My Toys
-// Add A Toy
-// Blog
-// Logi
 
 const router = createBrowserRouter([
     {
@@ -33,7 +28,8 @@ const router = createBrowserRouter([
         },
         {
           path: "/mytoys",
-          element: <MyToys></MyToys>
+          element: <MyToys></MyToys>,
+          loader: ()=>fetch('http://localhost:5000/alltoys')
         },
         {
           path: "/addatoy",
