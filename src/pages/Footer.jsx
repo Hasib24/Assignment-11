@@ -19,7 +19,7 @@ const Footer = () => {
                         </div>
 
                         <p className='my-3 text-justify'>
-                            Fuel your imagination with our exhilarating toy car collection! Discover a world of speed and adventure on our e-commerce website. From sleek sports cars to rugged off-roaders, each miniature vehicle is crafted with meticulous detail for endless hours of play. Buckle up and let your imagination race as you conquer daring jumps, navigate imaginary tracks, and outmaneuver rivals. Ignite your passion for speed and turn your playroom into a high-octane racetrack with our extraordinary toy cars!
+                            Fuel your imagination with our exhilarating toy car collection! Discover a world of speed and adventure on our e-commerce website. From sleek sports cars to rugged off-roaders, each miniature vehicle is crafted with meticulous detail for endless hours of play.
                         </p>
 
                         <div className='flex sm:justify-center md:justify-start'>
@@ -51,27 +51,31 @@ const Footer = () => {
                         </p>
                     </div>
 
-                <div className='m-2'>
-                    <h1 className='text-xl font-semibold'>Support</h1>
-                    <p>
-                        <a className='font-extralight' href="#">Help Desk</a> <br />
-                        <a className='font-extralight' href="#">Sales</a> <br />
-                        <a className='font-extralight' href="#">Become a Partner</a> <br />
-                    </p>
-                </div>
+                    <div className='m-2'>
+                        <h1 className='text-xl font-semibold'>Support</h1>
+                        <p>
+                            <a className='font-extralight' href="#">Help Desk</a> <br />
+                            <a className='font-extralight' href="#">Sales</a> <br />
+                            <a className='font-extralight' href="#">Become a Partner</a> <br />
+                        </p>
+                    </div>
 
-                <div className='m-2'>
-                    <h1 className='text-xl font-semibold'>Contact</h1>
-                    
-                    <address className='not-italic'>
-                        <h1 className='font-extralight' >123 Main Street</h1>
-                        <h1 className='font-extralight' >Anytown, CA 12345</h1>
-                        <h1 className='font-extralight' >+1 777 - 978 - 5570</h1>
-                        <h1 className='font-extralight' >Puran Polton, Dhaka</h1>
-                    </address>
+                    <div className='m-2'>
+                        <h1 className='text-xl font-semibold'>Contact</h1>
+
+                        <address className='not-italic'>
+                            <h1 className='font-extralight' >123 Main Street</h1>
+                            <h1 className='font-extralight' >Anytown, CA 12345</h1>
+                            <h1 className='font-extralight' >+1 777 - 978 - 5570</h1>
+                            <h1 className='font-extralight' >Puran Polton, Dhaka</h1>
+                        </address>
+                    </div>
 
                 </div>
-                </div>
+                    <div className='text-white text-center md:flex md:justify-between container mx-auto py-6 border-t border-slate-700'>
+                        <div> &copy; 2023 <span className='cursor-pointer font-semibold'>ToyCar.com</span> || All Right Researved </div>
+                        <div>Powered by <span className='font-bold cursor-pointer'>Company Name</span></div>
+                    </div>
             </div>
         
         
