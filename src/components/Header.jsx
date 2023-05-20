@@ -6,7 +6,9 @@ import { GoThreeBars } from 'react-icons/go';
 import { AuthContex } from '../providers/AuthContextProvider';
 
 const Header = () => {
-    let [responsiveMenu, setResponsiveMenu ] = useState(false)
+    const [ responsiveMenu, setResponsiveMenu ] = useState(false);
+    const [ profileMenu, setProfileMenu ] = useState(false)
+    
     const [myScroll, setMyScrollY] = useState(false)
     const { user, setUser, logOut } = useContext(AuthContex)
     
@@ -57,7 +59,11 @@ const Header = () => {
                         user ? <>
                             <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/mytoys'>My Toys</NavLink>
                             <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/addatoy'>Add A Toy</NavLink>
-                            <button onClick={handleLogOut}>Logout</button>
+                            <img className='w-10 border-2 border-slate-500 cursor-pointer rounded-full  inline' src={user.photoURL} alt="Photo" onClick={()=>setProfileMenu(!profileMenu)} />
+                            <div className={profileMenu ? `absolute top-30 right-0 bg-slate-100 shadow-md p-5 rounded-md`:`absolute -top-32 right-0 bg-slate-100 shadow-md p-5 rounded-md`}>
+                                <h1>{user.displayName}</h1>
+                                <button onClick={handleLogOut}>Logout</button>
+                            </div>
                         </>:<>
                             <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/login'>Login</NavLink>
                         </>
