@@ -46,35 +46,35 @@ const AddAToy = () => {
     return (
 
 
-        <form className='border' onSubmit={(e)=>hadleAddToy(e)}>
-            <div className='border container mx-auto w-2/3 p-10'>
+        <form className=' my-10' onSubmit={(e)=>hadleAddToy(e)}>
+            <div className='border rounded-md shadow-xl container mx-auto w-2/3 p-10'>
 
-                <div className='md:flex md:justify-between'>
-                    <input className='outline-none border rounded-md' type="text" name="name" id="name" placeholder='Toy Name' />
-                    <input className='outline-none border rounded-md my-3' type="url" name="url" id="url" placeholder='Photo url of toy' />
+                <div className='md:flex md:justify-between md:gap-2'>
+                    <input className='outline-none border rounded-md my-3 w-full md:mx-auto' type="text" name="name" id="name" placeholder='Toy Name' />
+                    <input className='outline-none border rounded-md my-3 w-full md:mx-auto' type="url" name="url" id="url" placeholder='Photo url of toy' />
                 </div>
-                <div className='md:flex md:justify-between'>
-                    <input className='outline-none border rounded-md my-3' type="text" name="sellerName" id="sellerName" defaultValue={user.displayName} />
-                    <input className='outline-none border rounded-md my-3' type="email" name="email" id="email" defaultValue={user.email} />
+                <div className='md:flex md:justify-between md:gap-2'>
+                    <input className='outline-none border rounded-md my-3 w-full md:mx-auto disabled:bg-slate-200' type="text" name="sellerName" id="sellerName" defaultValue={user.displayName} disabled />
+                    <input className='outline-none border rounded-md my-3 w-full md:mx-auto disabled:bg-slate-200' type="email" name="email" id="email" defaultValue={user.email}  disabled/>
                 </div>
-                <div>
-                    <h3>Additional Information</h3>
-                    <select name="category" id="category">
+                <div className=''>
+                    <h3 className=''>Additional Information</h3>
+                    <select className='outline-none border rounded-md my-3 w-full md:mx-auto disabled:bg-slate-200' name="category" id="category">
                         <option value="sports-car">sports car</option>
                         <option value="regular-car">regular car</option>
                     </select>
                 </div>
                 <div className='md:flex md:justify-between'>
-                    <input className='outline-none border rounded-md my-3' type="number" name='price' id='price' placeholder='Price' />
-                    <input className='outline-none border rounded-md my-3' type="number" name='rating' id='rating' placeholder='Rating' />
-                    <input className='outline-none border rounded-md my-3' type="number" name='quantity' id='quantity' placeholder='Quantity' />
+                    <input className='outline-none border rounded-md my-3 w-full md:mx-1 disabled:bg-slate-200' type="number" name='price' id='price' placeholder='Price' />
+                    <input className='outline-none border rounded-md my-3 w-full md:mx-1 disabled:bg-slate-200' type="number" name='rating' id='rating' placeholder='Rating' />
+                    <input className='outline-none border rounded-md my-3 w-full md:mx-1 disabled:bg-slate-200' type="number" name='quantity' id='quantity' placeholder='Quantity' />
 
                 </div>
                 <div>
-                    <textarea className='w-full border' name="description" id="des" ></textarea>
+                    <textarea className='outline-none border rounded-md my-3 w-full md:mx-auto disabled:bg-slate-200' name="description" id="des" placeholder='Descrition' ></textarea>
                 </div>
                 <div>
-                    <input type="submit" value="ADD TOY" />
+                    <input className='bg-blue-600 border border-blue-600 duration-700 text-white active:bg-blue-500 hover:bg-white hover:text-slate-800 cursor-pointer outline-none rounded-md my-3 w-full md:mx-auto py-2 font-semibold disabled:bg-slate-200' type="submit" value="ADD TOY" />
                 </div>
             </div>
 
