@@ -1,18 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import GoogleBtn from '../components/GoogleBtn';
 import { FcGoogle } from 'react-icons/fc';
+import { AuthContex } from '../providers/AuthContextProvider';
 
 
 const Login = () => {
+    const {signInUser, setUser} = useContext(AuthContex)
     let [show, setShow] = useState(false);
 
     const handleLogin = (e) =>{
-        e.preventDefault()
-        const email = e.target.email.value;
-        const password = e.target.password.value;
+        e.preventDefault();
+        const form = e.target;
+        let email = form.email.value;
+        let password = form.password.value;
 
-        console.log(email, password);
+        signInUser(email, password)
+        .then(res =>{
+            setUser(res.user)
+            form.reset()
+        })
     }
 
         
