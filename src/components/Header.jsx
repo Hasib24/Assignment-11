@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { BsCarFront } from 'react-icons/bs';
 import { MdClose } from 'react-icons/md';
 import { GoThreeBars } from 'react-icons/go';
+import { AuthContex } from '../providers/AuthContextProvider';
 
 const Header = () => {
     let [responsiveMenu, setResponsiveMenu ] = useState(false)
     const [myScroll, setMyScrollY] = useState(false)
+    const { user, setUser, logOut } = useContext(AuthContex)
+    
     
     window.addEventListener("scroll", ()=>{
         setMyScrollY(true)
@@ -15,6 +18,16 @@ const Header = () => {
         }
         
     })
+
+    const handleLogOut = () =>{
+        
+        logOut()
+        .then(() => {
+            setUser(null)
+        }).catch((error) => {
+          console.log(error.message);
+        });
+    }
     
    
 
@@ -43,6 +56,7 @@ const Header = () => {
                     <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/addatoy'>Add A Toy</NavLink>
                     <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/blog'>Blog</NavLink>
                     <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/login'>Login</NavLink>
+                    <button onClick={handleLogOut}>Logout</button>
                 </nav>
             </div>
         </header>
