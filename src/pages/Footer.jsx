@@ -1,10 +1,81 @@
 import React from 'react';
+import { FaFacebookF } from 'react-icons/fa';
+import { TiSocialTwitter } from 'react-icons/ti';
+import { FaInstagram } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
+
+
     return (
-        <div>
-            footer Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque illo maxime laboriosam in! Ad velit vel, expedita vero doloribus alias necessitatibus labore voluptates porro odit magnam modi dolorem deserunt quidem debitis nesciunt assumenda dolores distinctio quis iste tempora autem dolorum. Consequatur quod saepe ab dolores impedit velit modi minus facere quibusdam hic mollitia doloremque debitis ipsum est dolore adipisci numquam voluptas, ratione sequi nesciunt accusamus? Animi praesentium totam provident? Ad et voluptates quos dignissimos quam, ducimus exercitationem qui? In quo pariatur perferendis nulla inventore porro adipisci ipsa sit quidem? Nemo animi, fugit delectus et voluptatem ea voluptatum vitae nihil perspiciatis, sunt nobis quasi sit voluptatibus! Incidunt aliquam explicabo corporis! Voluptates rerum, laudantium laboriosam repellendus porro tenetur ex modi unde quidem expedita cupiditate ullam? Nobis dolore voluptatum quo adipisci, laboriosam eligendi? Voluptatibus, cum! Totam quidem fugit expedita officiis quae incidunt perferendis aliquid, quos nobis necessitatibus numquam sed, quo omnis. Voluptatem, inventore consequatur atque veniam, accusamus expedita ducimus ipsum nihil, totam cum harum suscipit aut. Minima molestiae reprehenderit aliquid deleniti consequuntur, labore sunt aspernatur rem perferendis dolorum beatae eaque tempora voluptatum veniam architecto alias vitae exercitationem incidunt possimus inventore! Non natus ipsa consectetur, illum ullam maiores mollitia ratione quam eligendi vitae, sint qui doloremque et nihil, nesciunt dolor rem? Corporis neque ex autem sed provident iste necessitatibus soluta tenetur commodi esse consequatur facilis recusandae maxime voluptates minima voluptate, modi sequi. Voluptatum vitae id esse et suscipit tempore atque. Sapiente error laboriosam itaque earum beatae facilis pariatur cum neque sit excepturi voluptatibus, a nam soluta magnam distinctio, ab consequuntur fuga aperiam quidem adipisci ea, nemo cumque architecto ad. Totam rem, autem expedita vel unde eveniet perspiciatis accusamus molestias quasi sapiente repudiandae consectetur culpa, minima, facere sequi quod dolorem? Fugit autem consequuntur molestias. Pariatur, possimus asperiores? Inventore, magni adipisci dolor at aut distinctio quas quos. Consequuntur in illum cupiditate saepe ad tempore? Facilis velit alias, illum temporibus excepturi sed maxime distinctio dolorem dolore, minima accusantium quod laudantium id natus. Ducimus, ipsum. Porro nam neque cumque voluptas eligendi placeat magni odio cupiditate quod, exercitationem, culpa, explicabo voluptatem dicta quas incidunt iste provident voluptatum eos repudiandae odit! Et perferendis dicta, odio quos enim voluptatibus esse nesciunt asperiores temporibus vel reiciendis odit a aliquid inventore quod ex? Doloremque ab, minus quod nam assumenda quisquam tempora maxime incidunt consectetur illo, rerum eveniet cum nulla ducimus eius ratione? A ducimus commodi quia tenetur minus distinctio quo cum quasi eaque.
-        </div>
+            <div className='bg-slate-800'>
+                <div className='container mx-auto grid grid-cols-2 md:grid-cols-6  text-white py-10 px-2'>  
+                    <div className='m-2 text-center md:text-left col-span-2'>
+                    
+                        <div className='flex items-center'>
+                            <span className='inline-block text-3xl font-semibold'>ToyCar</span> {""}
+                            <span className='inline-block text-3xl ml-1 font-extralight'>.</span>
+                            <span className='inline-block text-3xl ml-1 font-extralight'>com</span>
+                        </div>
+
+                        <p className='my-3 text-justify'>
+                            Fuel your imagination with our exhilarating toy car collection! Discover a world of speed and adventure on our e-commerce website. From sleek sports cars to rugged off-roaders, each miniature vehicle is crafted with meticulous detail for endless hours of play. Buckle up and let your imagination race as you conquer daring jumps, navigate imaginary tracks, and outmaneuver rivals. Ignite your passion for speed and turn your playroom into a high-octane racetrack with our extraordinary toy cars!
+                        </p>
+
+                        <div className='flex sm:justify-center md:justify-start'>
+                            <FaFacebookF className='inline-block text-4xl border p-1 m-1 rounded-full cursor-pointer '></FaFacebookF>
+                            <TiSocialTwitter className='inline-block text-4xl border p-1 m-1 rounded-full cursor-pointer '></TiSocialTwitter>
+                            <FaInstagram className='inline-block text-4xl border p-1 m-1 rounded-full cursor-pointer '></FaInstagram>
+                        </div>
+                    </div>
+
+                    <div className='m-2'>
+                        <h1 className='text-xl font-semibold'>Links</h1>
+                        <p>
+                            <Link className='font-extralight hover:underline' to={'/'}>About Us</Link> <br />
+                            <Link className='font-extralight hover:underline' to={'/'}>Gellary</Link> <br />
+                            <Link className='font-extralight hover:underline' to={'/'}>All Toys</Link> <br />
+                            <Link className='font-extralight hover:underline' to={'/'}>Events</Link> <br />
+                            <Link className='font-extralight hover:underline' to={'/'}>Become a Seller</Link> <br />
+                        </p>
+                    </div>
+
+                    <div className='m-2'>
+                        <h1 className='text-xl font-semibold'>Popular Cars</h1>
+                        <p>
+                            <Link className='font-extralight hover:underline' to={'/'}>Speed Express</Link> <br />
+                            <Link className='font-extralight hover:underline' to={'/'}>Power Racers</Link> <br />
+                            <Link className='font-extralight hover:underline' to={'/'}>Epic Drive</Link> <br />
+                            <Link className='font-extralight hover:underline' to={'/'}>Night King v2</Link> <br />
+                            <Link className='font-extralight hover:underline' to={'/'}>Netro Force</Link>
+                        </p>
+                    </div>
+
+                <div className='m-2'>
+                    <h1 className='text-xl font-semibold'>Support</h1>
+                    <p>
+                        <a className='font-extralight' href="#">Help Desk</a> <br />
+                        <a className='font-extralight' href="#">Sales</a> <br />
+                        <a className='font-extralight' href="#">Become a Partner</a> <br />
+                    </p>
+                </div>
+
+                <div className='m-2'>
+                    <h1 className='text-xl font-semibold'>Contact</h1>
+                    
+                    <address className='not-italic'>
+                        <h1 className='font-extralight' >123 Main Street</h1>
+                        <h1 className='font-extralight' >Anytown, CA 12345</h1>
+                        <h1 className='font-extralight' >+1 777 - 978 - 5570</h1>
+                        <h1 className='font-extralight' >Puran Polton, Dhaka</h1>
+                    </address>
+
+                </div>
+                </div>
+            </div>
+        
+        
+        
     );
 };
 
