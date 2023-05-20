@@ -7,7 +7,8 @@ import { AuthContex } from '../providers/AuthContextProvider';
 
 const Header = () => {
     const [ responsiveMenu, setResponsiveMenu ] = useState(false);
-    const [ profileMenu, setProfileMenu ] = useState(false)
+    const [ profileMenu, setProfileMenu ] = useState(false);
+    const [hoverMenu, setHoverMenu] = useState(false)
     
     const [myScroll, setMyScrollY] = useState(false)
     const { user, setUser, logOut } = useContext(AuthContex)
@@ -31,6 +32,9 @@ const Header = () => {
         });
     }
     
+    const handleHoverMenu = ()=>{
+        setHoverMenu(!hoverMenu)
+    }
    
 
     const navActvStyle = ({isActive}) =>{
@@ -59,8 +63,16 @@ const Header = () => {
                         user ? <>
                             <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/mytoys'>My Toys</NavLink>
                             <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/addatoy'>Add A Toy</NavLink>
-                            <img className='w-10 border-2 border-slate-500 cursor-pointer rounded-full  inline' src={user.photoURL} alt="Photo" onClick={()=>setProfileMenu(!profileMenu)} />
-                            <div className={profileMenu ? `absolute top-30 right-0 bg-slate-100 shadow-md p-5 rounded-md`:`absolute -top-32 right-0 bg-slate-100 shadow-md p-5 rounded-md`}>
+                            <div className='inline'>
+                                <img className='w-10 border-2 border-slate-500 cursor-pointer rounded-full  inline' src={user.photoURL} alt="Photo" onClick={()=>setProfileMenu(!profileMenu)} onMouseEnter={handleHoverMenu} onMouseLeave={handleHoverMenu}/>
+                                <p className={hoverMenu ? `inline absolute right-0 top-20 pr-5 text-sm font-extralight `: `hidden`}>
+                                    <span>{user.displayName}</span>
+                                    <br />
+                                    <span>Click on head</span>
+
+                                </p>
+                            </div>
+                            <div className={profileMenu ? `absolute top-30 right-0 bg-slate-100 shadow-md p-5 rounded-md`:`absolute -top-60 right-0 bg-slate-100 shadow-md p-5 rounded-md`}>
                                 <h1>{user.displayName}</h1>
                                 <button onClick={handleLogOut}>Logout</button>
                             </div>
