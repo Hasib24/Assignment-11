@@ -1,10 +1,10 @@
 import React from 'react';
-import bgVid from '../assets/bannar_vid.mp4';
+import bgVid from '../../assets/bannar_vid.mp4';
 
 
 const Banner = () => {
     return (
-        <div className='mb-5 h-[100vh]'>
+        <div className='h-[100vh]'>
             <video src={bgVid} className='absolute top-0 h-[100vh] w-full object-cover -z-10' loop muted></video>
             <div className='absolute top-0 h-[100vh] w-full bg-black opacity-20'>overlay</div>
             <div className='absolute h-[100vh] w-full top-0 flex flex-col items-center justify-center border-red-500 '>

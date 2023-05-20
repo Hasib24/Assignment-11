@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import HomeLayout from '../layouts/HomeLayout';
-import Home from '../pages/Home';
+import Home from '../pages/home/Home';
 import Error from '../pages/Error';
 import AllToys from '../pages/alltoys/AllToys';
 import MyToys from '../pages/mytoy/MyToys';
