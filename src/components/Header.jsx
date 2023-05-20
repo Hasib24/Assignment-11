@@ -52,11 +52,16 @@ const Header = () => {
                 <nav className={`text-xl flex flex-col md:block  p-2 ${responsiveMenu ? `absolute right-4 top-20 bg-[#363636de] rounded-md` : `absolute right-2 -top-48`} md:static md:bg-inherit duration-500`}>
                     <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/'>Home</NavLink>
                     <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/alltoys'>All Toys</NavLink>
-                    <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/mytoys'>My Toys</NavLink>
-                    <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/addatoy'>Add A Toy</NavLink>
                     <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/blog'>Blog</NavLink>
-                    <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/login'>Login</NavLink>
-                    <button onClick={handleLogOut}>Logout</button>
+                    {
+                        user ? <>
+                            <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/mytoys'>My Toys</NavLink>
+                            <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/addatoy'>Add A Toy</NavLink>
+                            <button onClick={handleLogOut}>Logout</button>
+                        </>:<>
+                            <NavLink style={navActvStyle} className='px-3 text-xl text-red-700 tracking-tight font-semibold active:text-slate-500' to='/login'>Login</NavLink>
+                        </>
+                    }
                 </nav>
             </div>
         </header>
