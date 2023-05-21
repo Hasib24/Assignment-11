@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         {
           path: "/alltoys",
           element: <AllToys></AllToys>,
-          loader: ()=>fetch('https://assignment-11-server-py32aysx2-hasib24.vercel.app/alltoys')
+          loader: ()=>fetch('http://localhost:5000/alltoys')
         },
         {
           path: "/mytoys",
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         {
           path: "/update/:id",
           element: <PrivateRoutes><UpdateMyToy></UpdateMyToy></PrivateRoutes>,
-          loader: ({params})=>fetch(`https://assignment-11-server-py32aysx2-hasib24.vercel.app/update/${params.id}`)
+          loader: ({params})=>fetch(`http://localhost:5000/update/${params.id}`)
           
         },
         {

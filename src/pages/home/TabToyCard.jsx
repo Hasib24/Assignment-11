@@ -1,17 +1,54 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContex } from '../../providers/AuthContextProvider';
 
 const TabToyCard = ({atoy}) => {
     const navigate = useNavigate();
+    const {user} = useContext(AuthContex)
     
 
 
     const { _id, name, url, price, category, sellerName, rating} = atoy
     
 
+    // swal({
+    //     title: "Are you sure?",
+    //     text: "Once deleted, you will not be able to recover this imaginary file!",
+    //     icon: "warning",
+    //     buttons: true,
+    //     dangerMode: true,
+    //   })
+    //   .then((willDelete) => {
+    //     if (willDelete) {
+    //       swal("Poof! Your imaginary file has been deleted!", {
+    //         icon: "success",
+    //       });
+    //     } else {
+    //       swal("Your imaginary file is safe!");
+    //     }
+    //   });
+
     const handleViewDetails =()=>{
-        console.log(`view id ${_id}`);
-        navigate(`/viewdetails/${_id}`)
+        
+        if(!user){
+
+            swal({
+                title: "You must to see details",
+                text: "Would you like to be redirected to login page?",
+                icon: "warning",
+                dangerMode: true,
+                buttons: true,
+              })
+              .then((isOk)=>{
+                if(isOk){
+                    navigate(`/login`)
+                }
+              })
+            return
+        }else{
+
+            navigate(`/viewdetails/${_id}`)
+        }
         
     }
     return (

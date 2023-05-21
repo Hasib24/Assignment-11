@@ -11,15 +11,15 @@ const TabOfToy = () => {
     let [toyBusCar, setToyBusCar] = useState([])
 
     useEffect(()=>{
-      fetch(`https://assignment-11-server-azure.vercel.app/alltoys/private-car`)
+      fetch(`http://localhost:5000/alltoys/private-car`)
       .then(res =>res.json())
       .then(pCar => setPrivateCar(pCar))
       
-      fetch(`https://assignment-11-server-azure.vercel.app/alltoys/hiking-car`)
+      fetch(`http://localhost:5000/alltoys/hiking-car`)
       .then(res =>res.json())
       .then(data =>setHikingCar(data))
 
-      fetch(`https://assignment-11-server-azure.vercel.app/alltoys/toy-bus`)
+      fetch(`http://localhost:5000/alltoys/toy-bus`)
       .then(res =>res.json())
       .then(data =>setToyBusCar(data))
 
