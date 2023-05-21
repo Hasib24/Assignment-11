@@ -12,7 +12,7 @@ const SingleToy = ({toy}) => {
     const { _id, name, price, category} = toy
 
     const handleUpdate = (_id) =>{
-        console.log(_id);
+        
         navigate(`/update/${_id}`);
         
     }

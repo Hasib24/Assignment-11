@@ -7,7 +7,7 @@ const TabToyCard = ({atoy}) => {
     const {user} = useContext(AuthContex)
     const location = useLocation()
     
-    console.log(location);
+    
 
 
     const { _id, name, url, price, category, sellerName, rating} = atoy
