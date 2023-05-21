@@ -59,9 +59,13 @@ const AddAToy = () => {
                 </div>
                 <div className=''>
                     <h3 className=''>Additional Information</h3>
-                    <select className='outline-none border rounded-md my-3 w-full md:mx-auto disabled:bg-slate-200' name="category" id="category">
-                        <option value="sports-car">sports car</option>
-                        <option value="regular-car">regular car</option>
+                    <select defaultValue="" className='outline-none border rounded-md my-3 w-full md:mx-auto disabled:bg-slate-200' name="category" id="category">
+                        <option disabled value="">Select car category</option>
+                        <option value="private-car">Private car</option>
+                        <option value="hiking-car">Hiking car</option>
+                        <option value="police-car">Police car</option>
+                        <option value="toy-taxi">Toy taxi</option>
+                        <option value="toy-bus">Toy bus</option>
                     </select>
                 </div>
                 <div className='md:flex md:justify-between'>
