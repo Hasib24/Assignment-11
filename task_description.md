@@ -131,7 +131,7 @@ You can explore component libraries other than DaisyUI. Remember, a unique proje
     -   Toy Name
     -   Sub-category
     -   Price
-    -   Available Quantity
+    -   Available 
     -   View Details button
     <br/>
 

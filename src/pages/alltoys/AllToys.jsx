@@ -12,19 +12,25 @@ const AllToys = () => {
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
                     <tr>
                         <th scope="col" className="px-6 py-3">
-                            Product name
+                            Seller
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Toy Name
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Sub-category
                         </th>
                         <th scope="col" className="px-6 py-3">
                             Price
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Category
+                            Quantity
                         </th>
                         
                         <th scope="col" className="px-6 py-3 "  colSpan='2'>
-                            Update
+                            Action
                         </th>
-                        <th scope='col'>Delete</th>
+                        
                         
                     </tr>
                 </thead>
