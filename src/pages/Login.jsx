@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import GoogleBtn from '../components/GoogleBtn';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContex } from '../providers/AuthContextProvider';
@@ -7,6 +7,12 @@ import useTitle from '../hooks/useTitle';
 
 
 const Login = () => {
+
+    const navigate = useNavigate();
+    const location = useLocation
+
+    const from = location.state?.from?.pathname || '/';
+
     useTitle('Login')
     const {signInUser, setUser} = useContext(AuthContex)
     let [show, setShow] = useState(false);
@@ -21,6 +27,7 @@ const Login = () => {
         .then(res =>{
             setUser(res.user)
             form.reset()
+            navigate(from, {replace: true})
         })
     }
 
