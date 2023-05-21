@@ -32,7 +32,7 @@ const AddAToy = () => {
         }
         
 
-        fetch('http://localhost:5000/addatoy',{
+        fetch('https://assignment-11-server-hasib24.vercel.app/addatoy',{
             method: 'POST',
           headers:{
             'content-type':'application/json'
@@ -40,7 +40,12 @@ const AddAToy = () => {
           body:JSON.stringify(toy)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data =>{
+            if(data.acknowledged){
+                swal("Good job!", "You added the toy successfuly!", "success");
+                form.reset()
+            }
+        })
     }
 
     return (
@@ -59,7 +64,7 @@ const AddAToy = () => {
                 </div>
                 <div className=''>
                     <h3 className=''>Additional Information</h3>
-                    <select defaultValue="" className='outline-none border rounded-md my-3 w-full md:mx-auto disabled:bg-slate-200' name="category" id="category">
+                    <select defaultValue="" className='outline-none border rounded-md my-3 w-full md:mx-auto disabled:bg-slate-200' name="category" id="category" required>
                         <option disabled value="">Select car category</option>
                         <option value="private-car">Private car</option>
                         <option value="hiking-car">Hiking car</option>
