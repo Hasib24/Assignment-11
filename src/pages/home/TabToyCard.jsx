@@ -1,13 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const TabToyCard = ({atoy}) => {
+    const navigate = useNavigate();
+    
 
 
-const { _id, name, url, price, category, sellerName, rating} = atoy
+    const { _id, name, url, price, category, sellerName, rating} = atoy
     
 
     const handleViewDetails =()=>{
         console.log(`view id ${_id}`);
+        navigate(`/viewdetails/${_id}`)
+        
     }
     return (
         
