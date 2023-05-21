@@ -6,7 +6,7 @@ import Error from '../pages/Error';
 import AllToys from '../pages/alltoys/AllToys';
 import MyToys from '../pages/mytoy/MyToys';
 import AddAToy from '../pages/AddAToy';
-import Blog from '../pages/Blog';
+import Blog from '../pages/blog/Blog';
 import Login from '../pages/Login';
 import Regestation from '../pages/Regestation';
 import PrivateRoutes from './PrivateRoutes';
