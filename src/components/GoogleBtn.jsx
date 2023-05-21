@@ -1,11 +1,21 @@
 import React, { useContext } from 'react';
 import { AuthContex } from '../providers/AuthContextProvider';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const GoogleBtn = ({children}) => {
+    const navigate = useNavigate();
+    const location = useLocation()
+
+    const from = location.state?.from?.pathname || '/';
+
     const {setUser, googleSignIn} = useContext(AuthContex)
     const handleClick = () =>{
         googleSignIn()
-        .then(result => setUser(result.user))
+        .then(result =>{
+            setUser(result.user)
+            navigate(from, {replace: true})
+        
+        })
         .catch(error => console.log(error.message))
         
     }
