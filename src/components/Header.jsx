@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { BsCarFront } from 'react-icons/bs';
 import { MdClose } from 'react-icons/md';
 import { GoThreeBars } from 'react-icons/go';
@@ -50,7 +50,7 @@ const Header = () => {
         <header className={myScroll ? `z-10 px-5 flex items-center sticky top-0 bg-slate-50 duration-700 shadow-md`: `z-10 px-5 flex sticky top-0 items-center bg-none duration-700`}>
             <div className=' flex justify-between items-center container mx-auto'>
                 <div className='flex items-center'>
-                    <BsCarFront className='text-6xl text-red-800'></BsCarFront>
+                    <Link to='/'><BsCarFront className='text-6xl text-red-800'></BsCarFront></Link>
                     <div className='p-3'>
                         <h1 className='text-3xl font-bold text-red-800'>ToyCar.com</h1>
                         <span className='font-thin text-slate-600'>A Toy Car Marketplace</span>
