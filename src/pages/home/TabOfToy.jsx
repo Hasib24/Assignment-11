@@ -11,15 +11,15 @@ const TabOfToy = () => {
     let [toyBusCar, setToyBusCar] = useState([])
 
     useEffect(()=>{
-      fetch(`http://localhost:5000/alltoys/private-car`)
+      fetch(`https://assignment-11-server-azure.vercel.app/alltoys/private-car`)
       .then(res =>res.json())
       .then(pCar => setPrivateCar(pCar))
       
-      fetch(`http://localhost:5000/alltoys/hiking-car`)
+      fetch(`https://assignment-11-server-azure.vercel.app/alltoys/hiking-car`)
       .then(res =>res.json())
       .then(data =>setHikingCar(data))
 
-      fetch(`http://localhost:5000/alltoys/toy-bus`)
+      fetch(`https://assignment-11-server-azure.vercel.app/alltoys/toy-bus`)
       .then(res =>res.json())
       .then(data =>setToyBusCar(data))
 
@@ -41,19 +41,19 @@ const TabOfToy = () => {
 
               <TabPanel>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                  {hikingCar.map(atoy =><TabToyCard atoy={atoy}></TabToyCard> )}
+                  {hikingCar.map(atoy =><TabToyCard atoy={atoy} key={atoy._id}/> )}
                 </div>
               </TabPanel>
 
               <TabPanel>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                  {privateCar.map(atoy =><TabToyCard atoy={atoy}></TabToyCard> )}
+                  {privateCar.map(atoy =><TabToyCard atoy={atoy} key={atoy._id}/> )}
                 </div>
               </TabPanel>
 
               <TabPanel>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                  {toyBusCar.map(atoy =><TabToyCard atoy={atoy}></TabToyCard> )}
+                  {toyBusCar.map(atoy =><TabToyCard atoy={atoy} key={atoy._id}/> )}
                 </div>
               </TabPanel>
               
