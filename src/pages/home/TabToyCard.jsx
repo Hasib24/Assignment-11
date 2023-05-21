@@ -3,7 +3,7 @@ import React from 'react';
 const TabToyCard = ({atoy}) => {
 
 
-const { _id, name, url, price, category, sellerName, quantity} = atoy
+const { _id, name, url, price, category, sellerName, rating} = atoy
     console.log(name, url);
     return (
         
@@ -17,8 +17,9 @@ const { _id, name, url, price, category, sellerName, quantity} = atoy
                         <h3>Seller : {sellerName}</h3>
                         <h3>Category : {category}</h3>
                     </div>
+                    <span>Rating : {rating}</span>
                     <h1 className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">{name}</h1>
-                    <h3 className='font-extralight'>Avoilable : {quantity} pices</h3>
+                    
                   
                     <div className="flex items-center mt-2.5 mb-5">
 

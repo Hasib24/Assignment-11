@@ -27,15 +27,7 @@ const TabOfToy = () => {
 
     },[])
 
-    // useEffect(()=>{
-    //   fetch(`http://localhost:5000/alltoys/hiking-car`)
-    //   .then(data =>setHikingCar(data))
-    // },[])
-
-  
-
-   
-
+ 
     
     return (
         <section className='container mx-auto my-14'>
@@ -48,19 +40,19 @@ const TabOfToy = () => {
               </TabList>
 
               <TabPanel>
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                   {hikingCar.map(atoy =><TabToyCard atoy={atoy}></TabToyCard> )}
                 </div>
               </TabPanel>
 
               <TabPanel>
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                   {privateCar.map(atoy =><TabToyCard atoy={atoy}></TabToyCard> )}
                 </div>
               </TabPanel>
 
               <TabPanel>
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                   {toyBusCar.map(atoy =><TabToyCard atoy={atoy}></TabToyCard> )}
                 </div>
               </TabPanel>
