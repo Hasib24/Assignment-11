@@ -11,13 +11,14 @@ import Login from '../pages/Login';
 import Regestation from '../pages/Regestation';
 import PrivateRoutes from './PrivateRoutes';
 import UpdateMyToy from '../pages/mytoy/UpdateMyToy';
+import ScrollToTop from '../hooks/ScrollToTop';
 
 
 
 const router = createBrowserRouter([
     {
       path: "/",
-      element: <HomeLayout></HomeLayout>,
+      element: <ScrollToTop><HomeLayout></HomeLayout></ScrollToTop>,
       children:[
         {
             path: "/",
