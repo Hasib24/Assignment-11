@@ -32,7 +32,7 @@ const AddAToy = () => {
         }
         
 
-        fetch('https://assignment-11-server-hasib24.vercel.app/addatoy',{
+        fetch('http://localhost:5000/addatoy',{
             method: 'POST',
           headers:{
             'content-type':'application/json'
