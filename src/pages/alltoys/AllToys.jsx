@@ -1,8 +1,10 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Atoy from './Atoy';
+import useTitle from '../../hooks/useTitle';
 
 const AllToys = () => {
+    useTitle('All Toys')
     const alltoys = useLoaderData()
    
     return (

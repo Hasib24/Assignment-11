@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogCard from './BlogCard';
+import useTitle from '../../hooks/useTitle';
 
 
 
@@ -27,6 +28,7 @@ const qnAndAns = [
 ]
 
 const Blog = () => {
+    useTitle('Blog')
     return (
         
         <div className='container mx-auto my-10'>

@@ -5,9 +5,11 @@ import TabOfToy from './TabOfToy';
 import Carousel from './Carousel';
 import Slider from './Slider';
 import MyMarquee from './MyMarquee';
+import useTitle from '../../hooks/useTitle';
 
 
 const Home = () => {
+    useTitle("Home")
     return (
         <section>
             <Banner></Banner>

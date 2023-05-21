@@ -2,10 +2,11 @@ import React, { useContext, useState } from 'react';
 import SingleToy from './SingleToy';
 import { useEffect } from 'react';
 import { AuthContex } from '../../providers/AuthContextProvider';
+import useTitle from '../../hooks/useTitle';
 
 
 const MyToys = () => {
-    
+    useTitle('My Toys')
     const {user, toys, setToys, loader} = useContext(AuthContex)
 
     if(loader){
