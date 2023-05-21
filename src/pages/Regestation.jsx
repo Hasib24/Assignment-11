@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import GoogleBtn from '../components/GoogleBtn';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContex } from '../providers/AuthContextProvider';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { app } from '../../firebase.config';
@@ -10,9 +10,14 @@ import useTitle from '../hooks/useTitle';
 const auth = getAuth(app);
 
 const Regestation = () => {
+    const navigate = useNavigate();
+    const location = useLocation()
+
+    const from = location.state?.from?.pathname || '/';
+
     useTitle('Regester')
     const { createUser, setUser } = useContext(AuthContex)
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
     const [ inputError, setInputError ] = useState('')
     const [ inputSucess, setInputSucess ] = useState('')
 
@@ -56,6 +61,7 @@ const Regestation = () => {
             setUser(res.user)
             
             form.reset()
+            navigate(from, {replace: true})
         } )
         .catch(error => {
             setInputError(error.message)
@@ -75,7 +81,7 @@ const Regestation = () => {
                 <input className='outline-none border rounded-md my-3 w-full md:mx-auto' type="email" name="email" id="email" placeholder='Enter email' required /> <br />
                 <input className='outline-none border rounded-md my-3 w-full md:mx-auto' type={show ? 'password' : 'text'} name="password" id="password" placeholder='Password' required /> <br />
                 <p onClick={()=>{setShow(!show)}}>{show ? <span>show password</span> : <span>hide password</span> }</p>
-                <input className='outline-none border rounded-md my-3 w-full md:mx-auto' type="url" name="url" id="url" placeholder='url' />
+                <input className='outline-none border rounded-md my-3 w-full md:mx-auto' type="url" name="url" id="url" placeholder='Photo url' />
                 <input className='bg-blue-600 border border-blue-600 duration-700 text-white active:bg-blue-500 hover:bg-white hover:text-slate-800 cursor-pointer outline-none rounded-md my-3 w-full md:mx-auto py-2 font-semibold disabled:bg-slate-200' type="submit" name="submit" id="submit" value="Register" />
 
                 <div>
