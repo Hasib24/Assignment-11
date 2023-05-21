@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom';
 import { AuthContex } from '../providers/AuthContextProvider';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { app } from '../../firebase.config';
+import useTitle from '../hooks/useTitle';
 
 const auth = getAuth(app);
 
 const Regestation = () => {
+    useTitle('Regester')
     const { createUser, setUser } = useContext(AuthContex)
     const [show, setShow] = useState(false);
     const [ inputError, setInputError ] = useState('')

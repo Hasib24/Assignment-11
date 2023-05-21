@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import GoogleBtn from '../components/GoogleBtn';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContex } from '../providers/AuthContextProvider';
+import useTitle from '../hooks/useTitle';
 
 
 const Login = () => {
+    useTitle('Login')
     const {signInUser, setUser} = useContext(AuthContex)
     let [show, setShow] = useState(false);
 
