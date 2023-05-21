@@ -1,11 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { BsCarFront } from 'react-icons/bs';
 import { MdClose } from 'react-icons/md';
 import { GoThreeBars } from 'react-icons/go';
 import { AuthContex } from '../providers/AuthContextProvider';
 
 const Header = () => {
+
+    const navigate = useNavigate();
+
     const [ responsiveMenu, setResponsiveMenu ] = useState(false);
     const [ profileMenu, setProfileMenu ] = useState(false);
     const [hoverMenu, setHoverMenu] = useState(false)
@@ -27,6 +30,7 @@ const Header = () => {
         logOut()
         .then(() => {
             setUser(null)
+            navigate('/')
         }).catch((error) => {
           console.log(error.message);
         });
