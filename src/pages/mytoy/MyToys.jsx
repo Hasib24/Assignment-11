@@ -13,7 +13,7 @@ const MyToys = () => {
         return <div>Loading...</div>
     }else{
         useEffect(()=>{
-            fetch(`http://localhost:5000/mytoys/${user.email}`)
+            fetch(`https://assignment-11-server-azure.vercel.app/mytoys/${user.email}`)
             .then(res=>res.json())
             .then(data => setToys(data))
         },[])

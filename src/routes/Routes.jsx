@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         {
           path: "/alltoys",
           element: <AllToys></AllToys>,
-          loader: ()=>fetch('https://assignment-11-server-py32aysx2-hasib24.vercel.app/alltoys')
+          loader: ()=>fetch('https://assignment-11-server-azure.vercel.app/alltoys')
         },
         {
           path: "/mytoys",
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         {
           path: "/update/:id",
           element: <PrivateRoutes><UpdateMyToy></UpdateMyToy></PrivateRoutes>,
-          loader: ({params})=>fetch(`https://assignment-11-server-py32aysx2-hasib24.vercel.app/update/${params.id}`)
+          loader: ({params})=>fetch(`https://assignment-11-server-azure.vercel.app/update/${params.id}`)
           
         },
         {
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
         {
           path: "/viewdetails/:id",
           element: <PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>,
-          loader: ({params})=>fetch(`https://assignment-11-server-py32aysx2-hasib24.vercel.app/viewdetails/${params.id}`)
+          loader: ({params})=>fetch(`https://assignment-11-server-azure.vercel.app/viewdetails/${params.id}`)
 
         },
         {
